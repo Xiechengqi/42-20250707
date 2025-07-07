@@ -1,0 +1,49 @@
+{
+ "exe": "./../bin/masa-tee-worker",
+ "key": "private.pem",
+ "debug": false,
+ "heapSize": 4092,
+ "executableHeap": false,
+ "productID": 1,
+ "securityVersion": 5,
+ "mounts": [
+    {
+        "target": "/tmp",
+        "type": "memfs"
+    },
+    {
+        "source": "/home/masa/",
+        "target": "/home/masa/",
+        "type": "hostfs",
+        "readOnly": false
+    }
+  ],
+  "env": [
+        {
+            "name": "LANG",
+            "fromHost": true
+        },
+        {
+            "name": "PWD",
+            "value": "/home/masa"
+        },
+        {
+            "name": "HOME",
+            "fromHost": true
+        },
+        {
+            "name": "STANDALONE",
+            "fromHost": true
+        },
+        {
+            "name": "LOG_LEVEL",
+            "fromHost": true
+        }
+    ],
+ "files": [
+    {
+        "source": "/etc/ssl/certs/ca-certificates.crt",
+        "target": "/etc/ssl/certs/ca-certificates.crt"
+    }
+  ]
+}
